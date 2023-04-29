@@ -143,18 +143,6 @@ It is advisable to install [pre-commit](https://pre-commit.com/) and the pre-com
 
 4. Fill out the Age public key in the appropriate variable in configuration section below, **note** the public key should start with `age`...
 
-### ☁️ Global Cloudflare API Key
-
-In order to use Terraform and `cert-manager` with the Cloudflare DNS challenge you will need to create a API key.
-
-1. Head over to Cloudflare and create a API key by going [here](https://dash.cloudflare.com/profile/api-tokens).
-
-2. Under the `API Keys` section, create a global API Key.
-
-3. Use the API Key in the appropriate variable in configuration section below.
-
-📍 You may wish to update this later on to a Cloudflare **API Token** which can be scoped to certain resources. I do not recommend using a Cloudflare **API Key**, however for the purposes of this template it is easier getting started without having to define which scopes and resources are needed. For more information see the [Cloudflare docs on API Keys and Tokens](https://developers.cloudflare.com/api/).
-
 ### 📄 Configuration
 
 📍 The `.config.env` file contains necessary configuration that is needed by Ansible, Terraform and Flux.
