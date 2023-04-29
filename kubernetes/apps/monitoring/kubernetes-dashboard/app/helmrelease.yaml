@@ -34,17 +34,20 @@ spec:
       - --enable-insecure-login
       - --token-ttl=43200
     ingress:
-      enabled: true
-      className: nginx
-      annotations:
-        cert-manager.io/cluster-issuer: letsencrypt-staging
-        hajimari.io/icon: mdi:kubernetes
-      hosts:
-        - &host "kubernetes.${SECRET_DOMAIN}"
-      tls:
-        - hosts:
-            - *host
-          secretName: kubernetes-dashboard-tls
+      main:
+        enabled: true
+        ingressClassName: traefik
+        annotations:
+          hajimari.io/enable: "true"
+          hajimari.io/icon: weather-sunset
+        hosts:
+          - host: &host "kubernetes.gill.pub"
+            paths:
+              - path: /
+                pathType: Prefix
+        tls:
+          - hosts:
+              - *host
     metricsScraper:
       enabled: true
     serviceMonitor:
