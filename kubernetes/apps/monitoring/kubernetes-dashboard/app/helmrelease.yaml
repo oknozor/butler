@@ -39,7 +39,7 @@ spec:
         ingressClassName: traefik
         annotations:
           hajimari.io/enable: "true"
-          hajimari.io/icon: weather-sunset
+          hajimari.io/icon: kubernetes
         hosts:
           - host: &host "kubernetes.gill.pub"
             paths:
