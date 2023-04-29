@@ -239,35 +239,7 @@ It is advisable to install [pre-commit](https://pre-commit.com/) and the pre-com
     # k8s-0          Ready    control-plane,master      4d20h   v1.21.5+k3s1
     # k8s-1          Ready    worker                    4d20h   v1.21.5+k3s1
     ```
-
-### ☁️ Configuring Cloudflare DNS with Terraform
-
-📍 Review the Terraform scripts under `./terraform/cloudflare/` and make sure you understand what it's doing (no really review it).
-
-If your domain already has existing DNS records **be sure to export those DNS settings before you continue**.
-
-1. Pull in the Terraform deps
-
-    ```sh
-    task terraform:init
-    ```
-
-2. Review the changes Terraform will make to your Cloudflare domain
-
-    ```sh
-    task terraform:plan
-    ```
-
-3. Have Terraform apply your Cloudflare settings
-
-    ```sh
-    task terraform:apply
-    ```
-
-If Terraform was ran successfully you can log into Cloudflare and validate the DNS records are present.
-
-The cluster application [external-dns](https://github.com/kubernetes-sigs/external-dns) will be managing the rest of the DNS records you will need.
-
+   
 ### 🔹 GitOps with Flux
 
 📍 Here we will be installing [flux](https://toolkit.fluxcd.io/) after some quick bootstrap steps.
@@ -282,7 +254,7 @@ The cluster application [external-dns](https://github.com/kubernetes-sigs/extern
     # ✔ prerequisites checks passed
     ```
 
-2. Push you changes to git
+2. Push your changes to git
 
     📍 **Verify** all the `*.sops.yaml` and `*.sops.yml` files under the `./ansible`, `./kubernetes`, and `./terraform` folders are **encrypted** with SOPS
 
