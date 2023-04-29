@@ -43,6 +43,9 @@ spec:
       http3:
         enabled: true
 
+    serviceAccount:
+      name: "kubernetes-dashboard"
+
     logs:
       general:
         level: ERROR
