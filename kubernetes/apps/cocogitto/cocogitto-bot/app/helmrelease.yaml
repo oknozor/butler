@@ -58,8 +58,9 @@ spec:
               - path: /
                 pathType: Prefix
         tls:
-          - hosts:
-              - *host
+          - secretName: tls-cocogitto
+            hosts:
+              - "bot.cocogitto.io"
     probes:
       liveness: &probes
         enabled: true
