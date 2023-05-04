@@ -35,9 +35,12 @@ spec:
     image:
       repository: oknozor/cocogitto-bot
       tag: latest
+      pullPolicy: Always
     env:
-      GITHUB_PRIVATE_KEY: ${githubPrivateKey}
       PORT: 8080
+    envFrom:
+      - secretRef:
+          name: cocogitto-bot-app
     service:
       main:
         ports:
